@@ -1,0 +1,602 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* 초기화요소 */
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+img {
+    vertical-align: top;
+}
+
+/* 이미지 line-height 없애기 */
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* a에 선 없애기 */
+
+em, address {
+    font-style: normal;
+}
+
+legend, caption {
+    display: none;
+}
+
+body {
+    word-break: keep-all;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.6rem;
+    color: #000;
+    line-height: 1.6;
+}
+
+.inner {
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+}
+
+/* 화면 크기 조절 */
+@media (max-width: 1600px) {
+    .inner {
+        max-width: calc(100% - 160px);
+    }
+}
+
+@media (max-width: 1400px) {
+    .inner {
+        max-width: calc(100% - 140px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .inner {
+        max-width: calc(100% - 120px);
+    }
+}
+
+@media (max-width: 1000px) {
+    .inner {
+        max-width: calc(100% - 100px);
+    }
+}
+
+@media (max-width: 768px) {
+    .inner {
+        max-width: calc(100% - 50px);
+    }
+}
+
+#wrap {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 초기화 끝 및 기본설정 */
+
+
+/* 화면 색*/
+body {
+    background: linear-gradient(320deg, #2ecc71 15%, #2980b9 85%) fixed;
+}
+
+/* header */
+#header {
+    background: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #999;
+    z-index: 999;
+}
+
+#header .inner {
+    height: 73px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28px
+}
+
+#header .gnb {
+    display: flex;
+}
+
+#header .gnb > li {
+    position: relative;
+}
+
+#header .gnb > li > span {
+    display: block;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+#header .gnb > li > span::after {
+    transition: all 0.5s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #000;
+    display: block;
+}
+
+#header .gnb > li:hover > span::after {
+    width: 100%;
+}
+
+
+@media (max-width: 1200px) {
+    #header .ham {
+        display: block;
+    }
+
+    #header nav {
+        position: relative;
+        width: 1024px;
+        left: 50%;
+        margin-left: -180px;
+    }
+
+    /*중앙으로 브라우저 줄여도*/
+    #header .util li:not(:last-child) {
+        display: none;
+    }
+}
+
+
+/* 공통묶음 */
+#main {
+    padding-top: 73px;
+}
+
+#main section {
+    padding: 100px 0;
+}
+
+#main h2 {
+    font-size: 5rem;
+}
+
+#main h2 + p {
+    padding: 20px 0;
+    font-size: 2.4rem;
+    color: darkblue;
+}
+
+
+@media (max-width: 1200px) {
+    #main section {
+        padding: 70px 0;
+    }
+
+    #main h2 {
+        font-size: 4rem;
+    }
+
+    #sec1 h2 + p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #main section {
+        padding: 60px 0;
+    }
+
+    #main h2 {
+        font-size: 3rem;
+    }
+
+    #main h2 + p {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* sec1 */
+#sec1 {
+    padding: 100px 0;
+    text-align: center;
+}
+
+#sec1 h2 {
+    font-weight: 400;
+    font-family: 'DM Serif Text', serif;
+    font-size: 8rem;
+}
+
+#sec1 h2 + p {
+    padding: 20px 0;
+    letter-spacing: 1px;
+    font-size: 2.4rem;
+    color: #999;
+}
+
+/* h2다음에오는 p에만 적용  letter-spacing로 자간 1px*/
+
+#sec1 .text_box {
+    height: 250px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+@media (max-width: 1200px) {
+    #sec1 h2 {
+        font-size: 6rem;
+    }
+
+    #sec1 h2 + p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #sec1 h2 {
+        font-size: 4rem;
+    }
+
+    #sec1 h2 + p {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* sec2 */
+#sec2 {
+    position: relative;
+    padding: 100px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#sec2::before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: '';
+    width: 1px;
+    height: 100%;
+    display: block;
+    background: #ccc;
+}
+
+#sec2 .inner {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* flex준거에 align 센터까지해서 세로축 정중앙에 */
+
+#sec2 .inner > * {
+    width: calc((100% - 200px) / 2);
+}
+
+/* inner 밑에 있는 모든 요소 200px만큼 띄우기 */
+
+#sec2 .txt {
+    text-align: center;
+}
+
+#sec2 img {
+    height: 550px;
+    width: 550px;
+    object-fit: cover;
+}
+
+#sec2 .aboutMe {
+    border: skyblue 5px solid;
+    border-radius: 20% 20%;
+}
+
+#sec2 .aboutMe p {
+    margin-left: 100px;
+}
+
+#sec2 .aboutMe span {
+    margin-left: 10px;
+}
+
+#sec2 i {
+    height: 50px;
+    width: 50px;
+}
+
+#sec2 .iCon p {
+    text-align: left;
+}
+
+
+@media (max-width: 1200px) {
+    #sec2 .inner > * {
+        width: 100%;
+    }
+
+    #sec2::before {
+        display: none;
+    }
+
+    #sec2 .txt {
+        text-align: center;
+    }
+
+    #sec2 .imgMe {
+        display: none;
+    }
+}
+
+
+/* sec3 */
+#sec3 {
+    text-align: center;
+}
+
+#sec3 p {
+    color: blue;
+}
+
+#sec3 ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sec3 ul li {
+    position: relative;
+    width: calc(100% - 90 / 4);
+}
+
+#sec3 ul li img {
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 20% 20%;
+    border: 5px solid skyblue;
+}
+
+#sec3 ul li span {
+    padding: 10px 20px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000;
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    #sec3 ul li {
+        width: calc((100% - 30) / 2);
+    }
+
+    #sec3 ul li:nth-child(n+3) {
+        display: none;
+    }
+}
+
+/* n+3번째부터 미디어태그는 선택자는 항상 똑같이 */
+
+@media (max-width: 768px) {
+    #sec3 br {
+        display: block;
+    }
+
+    #sec3 ul li {
+        width: 100%;
+    }
+
+    #sec3 ul li:nth-child(n+2) {
+        display: none;
+    }
+}
+
+.txt_center {
+    text-align: center;
+}
+
+
+/* sec4 */
+#sec4 {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.row_wrap {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    padding: 10px 0;
+    padding-right: 50px;
+}
+
+.txtfield.big {
+    height: 50px;
+}
+
+.txtfield.Mes {
+    height: 150px;
+}
+
+.title_content.big {
+    height: 50px;
+}
+
+.title_content {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.txtfield {
+    flex: 1;
+    background-color: white;
+    width: 300px;
+    height: 38px;
+    font-size: 13px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 버튼 */
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+
+    &.learn-more {
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 1.25em 2em;
+        background-color: pink;
+        border: 2px solid pink;
+        border-radius: 0.75em;
+        transform-style: preserve-3d;
+        transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: deeppink;
+            border-radius: inherit;
+            box-shadow: 0 0 0 2px pink, 0 0.625em 0 0 lightpink;
+            transform: translate3d(0, 0.75em, -1em);
+            transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+        }
+
+        &:hover {
+            background: pink;
+            transform: translate(0, 0.25em);
+
+            &::before {
+                box-shadow: 0 0 0 2px pink, 0 0.5em 0 0 lightpink;
+                transform: translate3d(0, 0.5em, -1em);
+            }
+        }
+
+        &:active {
+            background: pink;
+            transform: translate(0em, 0.75em);
+
+            &::before {
+                box-shadow: 0 0 0 2px pink, 0 0 lightpink;
+                transform: translate3d(0, 0, -1em);
+            }
+        }
+    }
+}
+
+/* footer */
+#footer {
+    padding: 100px 0;
+}
+
+#footer .copy {
+    color: blue;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    #footer {
+        font-size: 1.4rem;
+    }
+}
+
+
+/*마우스 커서*/
+a, input, button, textarea {
+    cursor: none;
+}
+
+.cursor_wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+.cursor_wrap .cursor {
+    position: fixed;
+}
+
+.cursor_wrap .cursor .circle {
+    display: block;
+    opacity: 0.5;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
+}
+
+.cursor_wrap .cursor.mouse_hover .circle {
+    background-color: #604fdf;
+    transform: translate(-50%, -50%) matrix(3, 0, 0, 3, 0, 0);
+}
+
+
+/* 드래그 색상*/
+::selection {
+    color: yellow;
+    text-shadow: 2px 2px 4px #6495ED;
+}
